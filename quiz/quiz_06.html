@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stack - 후위식 계산</title>
+</head>
+<body>
+    <script>
+        function solution(str){
+            let answer;
+            let stack = [];
+            let right,left = 0;
+            for(let s of str){
+                if(+s < 10){
+                    stack.push(s);
+                }else{
+                    right = +stack.pop( )
+                    console.log("right",right);
+                    left = +stack.pop();
+                    console.log("left",left);
+                    if(s ==="+"){stack.push(left + right);}
+                    else if(s === "-"){stack.push(left- right);}
+                    else if(s === "*"){stack.push(left * right);}
+                    else if(s === "/"){stack.push(left / right);}
+
+                }
+            }
+            answer = stack.pop();
+            return answer;
+        }
+        //      function solution(str){
+        //     let answer;
+        //     let stack = [];
+        //     let right,left = 0;
+        //     for(let s of str){
+        //         if(!isNum(s)){
+        //             stack.push(+s);
+        //         }else{
+        //             right = stack.pop();
+        //             left = stack.pop();
+        //             if(s ==="+"){stack.push(left + right);}
+        //             else if(s === "-"){stack.push(left - right);}
+        //             else if(s === "*"){stack.push(left * right);}
+        //             else if(s === "/"){stack.push(left / right);}
+        //         }
+
+                
+        //     }
+        //     answer = stack.pop();
+        //     return answer;
+        // }
+        let str = "35-7*62/+"
+        //(((3-5) * 7) + (6/2)))
+        console.log(solution(str));
+    </script>
+</body>
+</html>

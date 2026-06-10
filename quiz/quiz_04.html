@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stack - 괄호 맞춤법 검사기</title>
+</head>
+<body>
+    <script>
+         function solution(a){
+                let answer;
+                let count=0;
+                for(let i =0;i<a.length;i++){
+                    if(a[i]=="("){
+                        count++;
+                    }else if(a[i]==")"){
+                        count--;
+                    }
+                }
+                if(count===0)return "Yes";
+                else return"NO";
+            }
+            /*
+            let stack = [];
+            answer="Yes";
+            for(let x of a){
+                if(x==="("){
+                    stack.push(x);
+                }else if(x===")"){
+                    if(stack.length===0)return "NO";
+                    stack.pop();
+                }
+            }
+            if(stack.length > 0 ) return "NO";
+            */
+            let a = "())";
+            console.log(solution(a));
+    </script>
+</body>
+</html>

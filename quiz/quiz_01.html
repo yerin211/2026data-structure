@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>quiz_01 이진수 변환 - 재귀함수(하향식)</title>
+    </head>
+    <body>
+        <script>
+            
+            function solution(n){
+                let answer = "";
+                if(n == 0 ) return;
+                solution(parseInt(n/2));
+                ansewr += (n%2);
+                return answer;
+            }
+                /*
+            function solution(n){
+                let answer = "";
+                function recursion(n){
+                    if(n == 0)return;
+                    else{   
+                        recursion(parseInt(n/2));
+                        console.log(n%2);//List in first out
+                    }
+                }
+                recursion(n);
+                */
+
+                console.log(answer);
+                return answer;
+            }
+
+            console.log(solution(13));
+        </script>
+    </body>
+</html>

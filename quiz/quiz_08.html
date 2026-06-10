@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            function solution(n,k){
+                let answer=0;
+                //let prince = Array.from([length:n],[v,i]=>i+1); value값으로 index가 들어감
+                let prince = [];
+
+                for(let i=1;i<=n;i++){
+                    prince.push(i);
+                }
+
+                while(prince.length){
+                    for(let i =1;i<k;i++){
+                        prince.push(prince.shift())};
+                        prince.shift();
+                        if(prince.length===1){
+                            answer=prince.shift();
+                        }
+                }
+                
+                return answer;
+            
+            }
+
+            console.log(solution(8,3));
+        </script>
+    </body>
+</html>
+

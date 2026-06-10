@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>queue - 필수교육과정 설계</title>
+    </head>
+    <body>
+        <script>
+            function solution(need, plan){
+                let answer="YES";
+                let Mclass = [];
+                let ab="";
+
+                for(let i=0;i<plan.length;i++){
+                    Mclass.push(plan.charAt(i));
+                }
+                console.log(Mclass);
+                let j=0;
+                for(let i=0;i<Mclass.length;i++){
+                    if(Mclass.includes(need.charAt())){
+                        if(need.charAt()!=Mclass.shift()){
+                            return answer = "No";
+                        }
+        
+                    }
+                    if(Mclass.includes(need.charAt())) return answer="NO";
+                }
+                
+                return answer;
+            }
+            let a = "CBA";
+            let b = "CBDGE";
+            console.log(solution(a,b));
+        </script>
+    </body>
+</html>
+
