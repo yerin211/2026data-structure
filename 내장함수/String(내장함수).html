@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> String 내장함수 정리 </title>
+</head>
+
+<body>
+    <script>
+        // length: 문자열의 길이를 리턴
+        var txt = "ABCDEFGHIJKLMNOP";
+        console.log(`length : ${txt.length}`);
+
+        //indexOf
+        var str = "Please locate where 'locate'";
+        console.log(`indexOf : ${str.indexOf("locate")}`);
+        console.log(`indexOf : ${str.indexOf("Locate")}`);// 대소문자를 구분함
+        console.log(`lastIndexOf : ${str.lastIndexOf("locate")}`);
+
+        var find = "locate";
+        if (str.indexOf(find) > -1) {
+            console.log(find + "문자 발견");
+        } else
+            console.log(find + "문자 미발견");
+
+        //search()
+        console.log("search : " + str.search("locate"));
+
+        //***********slice(a,b)*********** : a인덱스부터 b-1까지
+        var str = "Apple, Banana, Greap";
+        console.log("slice() : " + str.slice(7, 13));
+        console.log("slice() : " + str.slice(7));
+        console.log("slice() : " + str.slice(-13, -7));
+
+        //subString(a,b) : a index부터 b-1 index까지의 문자열 리턴
+        console.log("substring : " + str.substring(7, 13));
+
+        //substr(a,b) : a index 부터 b 갯수의 문자까지
+        console.log("substr : " + str.substr(7, 6));
+
+        var jumin1 = "070828";
+        console.log("year : " + jumin1.substr(0, 2));
+        console.log("month : " + jumin1.substr(2, 2));
+        console.log("date : " + jumin1.substr(4, 2));
+
+        var jumin2 = "2007-08-28";
+        //var jumin2 = "07-08-28";
+        console.log("substring : " + jumin2.substring(0, jumin2.indexOf("-")));
+
+        //************replace() ************
+        var str1 = "Please visit here";
+        var str2 = str1.replace("here", "there");
+        console.log("replace : " + str2);
+
+        var str3 = "Please visit here here here";
+        var str4 = str3.replace("here", "there");//대소문자 구분
+        console.log("replace : " + str4);
+
+        //*********** 정규 표현식 **********
+        var str5 = "Please visit hEre HERE Here";
+        var str6 = str5.replace(/here/ig, "there");
+        // g == 글로벌(전역변수) i==ignore(대소문자 무시)
+        console.log(str6);
+
+        //toUpperCase()
+        var str9 = "Please visit here HERE here";
+        console.log("toUpperCase : " + str9.toUpperCase());
+
+        //toLowerCase()
+        console.log("toLowerCase : " + str9.toLowerCase());
+
+        //concat : 문자열 결합
+        var txt1 = "Hello";
+        var txt2 = "World";
+        var txt3 = txt1 + " " + txt2;
+        console.log("txt1 + txt2 : " + txt3);
+        console.log("concat : " + txt1.concat(" " + txt2));
+
+        //trim : 문자열 앞뒤의 공백을 제거
+        var str10 = "                                                                        Hello World!!      ";
+        console.log(str10);
+        console.log(str10.length);
+
+        console.log("trim : " + str10.trim());
+        console.log(str10.trim().length);
+
+        //padStart : 특정 자릿수를 통일하기 위해서 사용
+        var str11 = "11";
+        var str12 = "1792";
+        console.log("padStart : M-" + str11.padStart(8, 0));
+        console.log("padStart : M-" + str12.padStart(8, "0"));
+
+        var str12 = "7";
+        //var str12 = "07";
+        console.log("padStart : " + str12.padStart(2, "0"));
+
+        //padEnd
+        var str13 = "15";
+        console.log("padEnd : " + str13.padEnd(8, 0));
+
+        //charAt(a) : a index에 해당하는 문자 하나를 리턴
+        var str14 = "Hello World!";
+        console.log("charAt : " + str14.charAt(6));
+
+        //split : 문자열을 배열로 변환
+        var tags = "키보드,기계식,블루투스";
+        var arr = tags.split(",");
+        console.log(arr);
+
+        //join : 배열을 문자열로 변환
+        console.log(arr.join(","));
+
+        var birthday = "2007-08-28";
+        var arr = birthday.split("-");
+        console.log(arr);
+
+        console.log(arr.join(","));
+        console.log(arr.join("/"));
+
+
+    </script>
+</body>
+
+</html>
