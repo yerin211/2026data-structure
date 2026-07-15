@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script>
+        function solution(meeting) {
+            let answer = 1;
+            meeting.sort(function (a, b) { return a[1] - b[1] });
+            let temp = meeting[0][1];
+            //console.log(temp);
+            for (meet of meeting) {
+                if (temp === meet[0]) {
+                    answer++;
+                    temp = meet[1];
+                    console.log("aid :" + temp);
+                }
+            }
+
+            return answer;
+        }
+        //let arr = [[1, 4], [2, 3], [3, 5], [4, 6], [5, 7]];
+        let arr = [[3, 3], [1, 3], [2, 3]];
+        console.log(solution(arr));
+    </script>
+</body>
+
+</html>
+
+!
