@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title>결혼식 - 인터벌 스케쥴링</title>
+</head>
+
+<body>
+    <script>
+        function solution(times) {
+            let answer = 0;
+            times.sort(function (a, b) {
+                if (a[0] == b[0]) return a[1] - b[1]
+                else return a[0] - b[0]
+            });
+            console.log(times);
+            let max = 0;
+            let temp = 0;
+            for (let i = 1; i < 5; i++) {
+
+                if (times[i][0] <= times[i - 1][1] < times[i][1]) {
+                    if (i + 1 > 4) {
+                        break;
+                    }
+                    if (temp > max) {
+                        max = temp;
+                    }
+                    if (times[i + 1][0] >= times[i][1]) {
+                        console.log(temp);
+                        temp--;
+                    }
+                    temp++;
+
+                }
+                answer = max;
+            }
+
+            return answer;
+        }
+
+        let arr = [[14, 18], [12, 15], [15, 20], [20, 30], [5, 14]];
+        console.log(solution(arr));
+    </script>
+</body>
+
+</html>
+
+!
