@@ -32,7 +32,7 @@ class BinaryTree {
     preOrderTraversal(tree) {            //루트 -> 왼쪽 -> 오른쪽
         if (tree === null) return; //기저 조건
         
-        console.log(tree.data);
+        console.log(tree.getData());
         this.preOrderTraversal(tree.getLeftSubTree());
         this.preOrderTraversal(tree.getRightSubTree());
     }
@@ -40,7 +40,7 @@ class BinaryTree {
     inOrderTrabersal(tree) {                 //중위 순회(inOrder) : 왼쪽 -> 루트 -> 오른쪽
         if (tree === null) return;
         this.inOrderTrabersal(tree.getLeftSubTree());
-        console.log(tree.data);
+        console.log(tree.getData());
         this.inOrderTrabersal(tree.getRightSubTree());
     }
 
@@ -48,7 +48,7 @@ class BinaryTree {
         if (tree === null) return;
         this.postOrderTraversal(tree.getLeftSubTree());
         this.postOrderTraversal(tree.getRightSubTree());
-        console.log(tree.data);
+        console.log(tree.getData());
     }
 
     removeLeftSubTree() {

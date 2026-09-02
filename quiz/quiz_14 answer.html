@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>이진트리의 운행 방법 - 부분 집합 구하기</title>
+</head>
+
+<body>
+    <script>
+        function solution(n) {
+            let answer = "";
+            let ch = Array.from({ length: (n + 1) }, () => 0);
+
+            function DFS(v) {
+                if (v === (n + 1)) {
+                    let temp = "";
+                    for (let i = 1; i <= n; i++) {
+                        if (ch[i] === 1) {
+                            temp += i + "";
+                        }
+                    }
+                    answer.push(temp.trim());
+                }
+                else {
+                    ch[v] = 1;
+                    DFS(v + 1);
+                    ch[v] = 0;
+                    DFS(v + 1);
+                }
+
+            }// function
+
+            DFS(1);
+            return answer;
+        }
+
+        console.log(solution(3));
+    </script>
+</body>
+
+</html>
+
+!
