@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <title>미로 탐색 - DFS</title>
+</head>
+
+<body>
+    <script>
+        function solution(board) {
+            let answer = 0;
+            let visited = [];
+            console.log(board);
+
+            function DFS(x, y) {
+
+                if (x === 6 && y === 6) {
+                    answer++;
+                    x = 0;
+                    y = 0;
+                } else {
+                    if (board[x - 1, y] === 0) {
+                        board[x - 1][y] = 1;
+                        DFS(x - 1, y);
+                        board[x - 1][y] = 0;
+                    } if (board[x, y + 1] === 0) {
+                        board[x][y + 1] = 1;
+                        DFS(x, y + 1);
+                        board[x][y + 1] = 0;
+                    } if (board[x + 1, y] === 0) {
+                        board[x + 1][y] = 1;
+                        DFS(x + 1, y);
+                        board[x + 1][y] = 0;
+                    } if (board[x, y - 1] === 0) {
+                        board[x][y - 1] = 1;
+                        DFS(x, y - 1);
+                        board[x][y - 1] = 0;
+                    }
+
+                }
+
+
+            }
+            board[0][0] = 1
+            DFS(0, 0)
+
+            return answer;
+        }
+
+        let arr = [
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 1, 1, 1, 1, 1, 0],
+            [0, 0, 0, 1, 0, 0, 0],
+            [1, 1, 0, 1, 0, 1, 1],
+            [1, 1, 0, 0, 0, 0, 1],
+            [1, 1, 0, 1, 1, 0, 0],
+            [1, 0, 0, 0, 0, 0, 0],
+        ];
+        console.log(solution(arr));
+    </script>
+</body>
+
+</html>
